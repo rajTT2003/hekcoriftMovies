@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <link rel="stylesheet" href="css/morePageStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" type="x-icon" href="css/images/HEKCO.png">
+</head>
+<body>
+  <div class="myElement">
+  </div>
+  
+  <div class="navigation-container">
+    <i class="fa-solid fa-bars" id="menu-icon"></i> 
+    <img class="logo-image" src="css/images/HEKCO-LOGO.png" alt="logo" href="index.html">
+    <h1 id="logo"><a href="index.html">HEKCO RIFT</a></h1>
+    <p id="sub-logo"><a href="index.html">MOVIES</a></p>
+
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown-container">
+          <a href="#">Genres&#9660;</a>
+          <div class="dropdown" id="genre-dropdown-menu">
+            <!-- Dropdown menu content goes here -->
+          </div>
+        </li>
+        <li class="search-container">
+          <form id="search-form">
+            <input type="text" name="" id="search" placeholder="Search" autocomplete="off">
+            <button type="submit" id="search-button"><i class="fa-solid fa-magnifying-glass" style="color: #f3a21f;"></i></button>
+          </form>
+          <ul id="search-suggestions" style="display: none;"></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+      
+      <div class="main-container">
+        <div class="titleMore-container">
+            <h1 class="titleMore">Search Results</h1>
+        </div>
+       
+        <div class="container">
+          <div class="movie-section" id="movie-sections">
+            <div id="result-tray">
+              <div class="movie-row">
+                <a href="#">
+                    
+                    <div class="movie-container">
+                    <img class="playbuttons" src="css/images/playbutton.png" alt="playbutton">
+                    <div class="movie-picture">
+                      <img src="" alt="">
+                      <div>
+                        <h4 class="movie-rating">9.8</h4>
+                      </div>
+                    </div>
+                    <div class="movie-title">
+                      <h4 class="title-text">TITLE</h4>
+                    </div>
+                    <div class="movie-info">
+                      <div class="movie-year">2023 ·</div>
+                      <div class="movie-time">109 min</div>
+                      <div class="type">Movie</div>
+                    </div>
+                    <div class="overview">Movie overview content goes here</div>
+                  </div>
+                    
+                  
+                </a>
+              </div>
+            </div>
+            <div class="pageTracker-container">
+              <!--<button class="pageNumber" id="prevButton">Prev</button> -->
+              <div class="pageContainer" id="pageContainer">
+                <!-- Page numbers will be dynamically added here -->
+              </div>
+            <!--  <button class="pageNumber" id="nextButton">Next</button> -->
+            </div>
+          </div>
+        
+            
+          <div class="filter-container" id="filter-container">
+            <i class="fa-solid fa-lock" style="color: #ffbb00;"></i>
+            <h1 class="filterMessage"> FILTERS COMING SOON</h1>
+        </div> 
+
+           
+        </div>     
+      </div>
+      <br>
+    
+      
+      <script type="text/javascript" src="genre.js"></script> 
+      <script type="text/javascript" src="test.js"></script> 
+      <script type="text/javascript" src="scroller.js"></script>
+      <script>
+        // Get references to the HTML elements
+        var menuIcon = document.getElementById("menu-icon");
+        var navigation = document.getElementById("navigation");
+      
+        // Add a click or touch event listener to the menu icon
+        menuIcon.addEventListener("click", function() {
+          // Check the device width
+          if (window.innerWidth <1000) {
+            // Toggle the visibility of the navigation element
+            navigation.style.display = (navigation.style.display === "block") ? "none" : "block";
+          }
+        });
+      </script>
+
+</body>
+</html>

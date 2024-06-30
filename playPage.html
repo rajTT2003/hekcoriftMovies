@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEKCO RIFT | WATCH MOVIE</title>
+    <link rel="stylesheet" href="css/playPageStyle.css" type="text/css" media="all" />
+    <link rel="shortcut icon" type="x-icon" href="css/images/HEKCO.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <div class="myElement">
+  </div>
+    
+  <div class="navigation-container">
+    <i class="fa-solid fa-bars" id="menu-icon"></i> 
+    <img class="logo-image" src="css/images/HEKCO-LOGO.png" alt="logo" href="index.html">
+    <h1 id="logo"><a href="index.html">HEKCO RIFT</a></h1>
+    <p id="sub-logo"><a href="index.html">MOVIES</a></p>
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown-container">
+          <a href="#">Genres&#9660;</a>
+          <div class="dropdown" id="genre-dropdown-menu">
+            <!-- Dropdown menu content goes here -->
+          </div>
+        </li>
+        <li class="search-container">
+          <form id="search-form">
+            <input type="text" name="" id="search" placeholder="Search" autocomplete="off">
+            <button type="submit" id="search-button"><i class="fa-solid fa-magnifying-glass" style="color: #f3a21f;"></i></button>
+          </form>
+          <ul id="search-suggestions" style="display: none;"></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+
+      <div>
+        <div id="playBox">
+            <div class="theBody">
+                <div class="theElements">   
+                    
+                <div class="playBox-container">
+                    <img  class="backdrop-image" id="backdropPoster" src="" alt="backdrop-image">
+                    <div class="iframe-container" id="iframe-contain">
+                        <iframe id="movie-player" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>            
+                    <img class="movie-play-button" src="css/images/playbutton.png" alt="playbutton">
+
+                  </div>
+                    
+                  <div class="movieDetails-container">
+                    <div class="movie-details">
+                      <img id="moviePoster" src="css/images/movie13.jpg" alt="movie-image" >
+                      <div class="movieTitle-play">
+                        <h1 id="movieTitle">TITLE</h1>
+                        <div class="moiveInfo-play">
+                          <ul>
+                            <li class="info" id="runtime">109 min</li>
+                            <li class="info" id="rating">8.9</li>
+                            <li class="info">Release Date:</li>
+                            <li class="info data" id="release_date">Jun 02, 2023</li>
+                          </ul>
+                          <div class="description-container">
+                            <p id="overview">
+                              The sun slowly descended behind the horizon, casting a warm, golden glow across the tranquil meadow. 
+                              As the evening breeze gently rustled the leaves, a symphony of chirping birds filled the air, creating a serene ambiance. 
+                              The fragrance of blooming flowers wafted through the atmosphere, enticing butterflies to dance among the vibrant petals. 
+                              In the distance, a babbling brook meandered through the landscape, its crystal-clear waters reflecting the colors of the setting sun.
+                            </p>
+                            <div class="movie-data" id="trailer-container">
+                           
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="movieFile-container">
+                      <div class="server">
+                        <h1><i class="fa-solid fa-server"></i> Server</h1>
+                        <div class="server-list">
+                          <button class="server1">StreamTape</button>
+                        </div>
+                        
+                      </div>
+                      <div class="movieFile">
+                        <h1><i class="fa-solid fa-clapperboard"></i> Movie</h1>
+                        <div class="file-list-container">
+                          <div class="myElement">
+                          </div>
+                          <div id="episode-scroller"></div>
+                          <div id="file-list">
+
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+            </div>    
+            </div>
+            
+            
+        </div>
+      </div>
+ 
+
+<script type="text/javascript" src="search.js"></script> 
+<script type="text/javascript" src="js/api.js"></script> 
+<script type="text/javascript" src="scroller.js"></script>   
+<script type="text/javascript" src="js/streamtapeApi.js"></script>
+<script>
+  // Get references to the HTML elements
+  var menuIcon = document.getElementById("menu-icon");
+  var navigation = document.getElementById("navigation");
+
+  // Add a click or touch event listener to the menu icon
+  menuIcon.addEventListener("click", function() {
+    // Check the device width
+    if (window.innerWidth <1000) {
+      // Toggle the visibility of the navigation element
+      navigation.style.display = (navigation.style.display === "block") ? "none" : "block";
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,825 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+  }
+  
+  
+  body {
+	font-size: 12px;
+	line-height: 1.3;
+	font-family: Arial, Helvetica, Sans-Serif;
+	color: #ccc;
+	background-color: #141414;
+	height: 100vh;
+	margin: 0;
+  }
+  
+  a {
+	color: #e7b038;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  a:hover {
+	text-decoration: none;
+  }
+  
+  a img {
+	border: 0;
+  }
+
+  
+  h2 {
+	font-size: 10px;
+	color: #f2a223;
+	font-weight: bold;
+  }
+  
+  h3 {
+	font-size: 14px;
+	color: #fff;
+	font-weight: bold;
+  }
+  
+  h4 {
+	font-size: 14px;
+	color: #f3b12b;
+	font-weight: bold;
+  }
+  
+
+
+  
+  h1#logo {
+	position: absolute;
+	top: 15px;
+	margin-left: 25px;
+	padding-left: 50px;
+	cursor: pointer;
+  }
+  
+  .logo-image {
+	width: 4%;
+	position: absolute;
+	top: 10px;
+	margin-left: 20px;
+	cursor: pointer;
+  }
+  
+  h1#logo a {
+	color: #fcfcfc;
+	text-decoration: none;
+  }
+  
+  p#sub-logo a {
+	position: absolute;
+	top: 45px;
+	margin-left: 25px;
+	padding-left: 50px;
+	color: #ff9c2c;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 18px;
+	cursor: pointer;
+  }
+  
+  .navigation-container {
+	background-color: #000;
+	width: 100%;
+	height: 12vh;
+  top: 0; /* Add this line to position the container at the top */
+  }
+  
+  #navigation {
+	display: flex;
+	align-items: center;
+	margin-right: 100px;
+	float: right;
+	clear: right;
+	padding-top: 28px;
+	padding-bottom: 0px;
+  padding-right: 70px;
+  }
+  
+  #navigation ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+  }
+  
+  #navigation ul li {
+	margin-left: 29px;
+  }
+  
+  #navigation ul li a {
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+  }
+  
+  #navigation ul li a.active,
+  #navigation ul li a:hover {
+	color: #d91d2a;
+  }
+  
+  .search-container {
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+	position: relative;
+  }
+  
+  .search-container input[type="text"] {
+	padding: 8px;
+	border: none;
+
+	margin-right: 4px;
+  }
+  .search-container input[type="text"]::placeholder {
+	color:#f3a21f; /* Replace with your desired color */
+	font-weight: bold;
+  }
+  #search{
+	height: 18px;
+	margin-left: 10px;
+	border-top-left-radius: 20px ;
+	border-bottom-left-radius: 20px ;
+	background-color: rgb(68, 68, 68) ;
+	color: #ffffff;
+	margin-right: 0;
+  }
+  .fa-magnifying-glass{
+	background-color: rgb(68, 68, 68) ;
+	padding: 10.5px;
+	margin: 0;
+	border-top-right-radius: 20px ;
+	border-bottom-right-radius: 20px ;
+  }
+
+
+  #search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background-color: #333333;
+    border: 1px solid #ff9900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 10px;
+    display: none;
+    z-index: 4;
+    overflow: hidden;
+    }
+    
+    #search-suggestions li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    
+    #search-suggestions li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    }
+    
+    #search-suggestions li img {
+    width: 30px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px;
+    }
+    
+    #search-suggestions li span {
+    flex: 1;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+    }
+  
+    #search-button{
+    background:none;
+    border: none;
+    margin: -4px;
+    padding: 0;
+    }
+
+
+
+  
+    .dropdown {
+      display: none;
+      position: absolute;
+      font-family: 'Fjalla One', sans-serif;
+      width: 400px;
+      background-color: #131313;
+      border:1px solid #f2a223;
+      border-radius: 20px;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 4;
+      top: 100%; /* Position the dropdown below the parent element */
+      left: 0; /* Align the dropdown with the left edge of the parent element */
+      }
+      
+  
+  .dropdown a {
+	font-size: 2px;
+	color: rgb(0, 0, 0);
+	padding: 5px;
+	text-decoration: none;
+	display: inline-block;
+	width: 80px; /* Adjust the width of each genre item for five columns */
+	box-sizing: border-box;
+	margin: 10px; /* Add more margin for spacing between items */
+  }
+  
+  
+  .genre-column {
+	flex-basis: 15%; /* Adjust the flex-basis for four columns */
+	padding: 5px;
+	box-sizing: border-box;
+  }
+  
+  .column-start {
+	break-before: column; /* Start new column for items with this class */
+  }
+  
+  .dropdown-container {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-container:hover .dropdown {
+	display: block;
+  }
+  
+  .dropdown a:hover {
+	color: orange !important;
+  }
+
+
+
+
+#playBox,.theBody, .theElements{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.playBox-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.playBox-container::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), transparent 50%, rgba(0, 0, 0, 1));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent 50%, rgba(0, 0, 0, 1));
+  pointer-events: none;
+}
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.iframe-container iframe {
+  width: 1300px;
+  height: 600px;
+ 
+}
+.movie-player {
+  width: 500px;
+  background-color: #ccc;
+
+}
+.backdrop-image {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+
+.movieDetails-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top of the container */
+  }
+  
+  .movie-details{
+    width: 1000px; /* Adjust the width as needed */
+    height: auto;
+    padding-bottom: 20px;
+    background-color: #141414;
+    border-radius: 50px;
+    display: inline-block;
+
+  }
+
+  .movieFile-container {
+    width: 270px; /* Adjust the width as needed */
+    height: 70vh;
+    border-radius: 50px;
+  }
+  .movieFile{
+    width: 100%;
+    height: 36.5vh;
+    background-color: #141414;
+    border-radius: 50px;
+    
+  }
+  .server{
+    width: 100%;
+    height: 36.5vh;
+    background-color: #141414;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+  .server-list, .file-list-container{
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #494949;
+    border-radius: 20px;
+    width: 230px;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #file-list {
+    padding: 0;
+    width: 100%;
+    overflow-y: auto; /* Add a scrollbar when content exceeds container height */
+    max-height: 25vh; /* Add a maximum height to limit the container size */
+    list-style-type: none;
+    flex: 1;
+    overflow-x: hidden;
+  }
+
+  #file-list ul {
+    margin: 0; /* Remove default margin for ul */
+    padding-top: 5px;
+  }
+
+  #file-list li {
+    margin-bottom: 2px;
+  }
+
+  #file-list a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0; /* Add some vertical spacing between items */
+    width: calc(100% - 15px); /* Account for padding (10px on each side) */
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    color: #000;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  #file-list a:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .server1:hover{
+    background-color: #ff8b07;
+    cursor: pointer;
+    color: #000;
+    border-radius: 20px;
+  }
+  
+  .movie-details {
+    margin-top: 50px;
+    margin-right: 10px; /* Add some spacing between the two divs */
+    display: flex;
+  }
+  
+  .movieFile-container {
+    margin-top: 50px;
+    margin-left: 10px; /* Add some spacing between the two divs */
+  }
+  .movie-details img{
+    display: inline-block;
+    width: 240px; /* Set a fixed width */
+    height: 360px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    margin: 40px;
+    border-radius: 20px;
+  }
+  .movieTitle-play h1{
+    display: flex;
+    margin-top: 35px;
+  }
+  .moiveInfo-play ul {
+    list-style-type: none;
+  }
+  .moiveInfo-play ul li{
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 15px;
+    
+  }
+  .info{
+    background-color: #ff9c2c;
+    padding: 5px;
+    border-radius: 5px;
+    color: #141414;
+  }
+  .description-container{
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .description-container p{
+    font-size:  15px;
+  }
+  .movie-data{
+    margin-top: 15px;
+    display: flex;
+  }
+  .movie-data ul{
+    list-style-type: none;
+    
+  }
+  .movie-data ul li{
+    display: block;
+    font-size: 13px;
+  }
+  .nowrap{
+    white-space: nowrap;
+  }
+  .data{
+    display: inline-block;
+    margin-left: -25px;
+  }
+  .movieFile h1, .server h1{
+    text-align: center;
+  }
+  .movie-play-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100px;
+  }
+  .movie-play-button:hover{
+    width: 110px;
+    cursor: pointer;
+  }
+
+
+#trailer-container{
+  background-color: #444444;
+  width: 660px;
+  height: 270px;
+}
+
+#trailer-container iframe{
+  width: 100%;
+}
+
+#menu-icon{
+  display: none;
+}
+
+   /* Define the custom scrollbar style */
+   ::-webkit-scrollbar {
+		width: 8px;
+	  }
+	
+	  ::-webkit-scrollbar-track {
+		background-color: #f1f1f1;
+	  }
+	
+	  ::-webkit-scrollbar-thumb {
+		background-color: #888;
+	  }
+	
+	  ::-webkit-scrollbar-thumb:hover {
+		background-color: #555;
+	  }
+
+    /* Default styles */
+
+/* ... Existing CSS code ... */
+
+
+/* Responsive styles */
+
+
+  /*PORTRAIT MODE*/
+  @media only screen and (max-device-width: 1023px) and (orientation: portrait), (max-width: 1023px) and (orientation: portrait) {
+
+        body{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .movie-player {
+      width: 100%;
+      background-color: #ccc;
+      z-index: 4;
+      position: relative;
+    }
+    .iframe-container  {
+      width: 100%;
+    }
+.navigation-container{
+  height: 12vh;
+}
+    #menu-icon{
+      float: right;
+      font-size: 30px;
+      display:flex;
+      margin: 20px;
+      }
+    .logo-image{
+      width: 50px;
+      margin-left: 5px;
+    }
+    h1#logo{
+      margin-left: 10px;
+      margin-top: -5px;
+    }
+    h1#logo a{
+      font-size: 20px;
+      margin-top: 0;
+    }
+    p#sub-logo{
+      margin-left: -15px;
+    }
+    p#sub-logo a {
+      font-size: 20px;
+      margin-top: -10px;
+      letter-spacing: 9px;
+    }
+     
+    #navigation{
+    	width: 250px;
+		margin-right: 30px;
+		margin-top: -20px;
+		border-radius: 30px;
+		padding: 0;
+		z-index: 5;
+		position: relative;
+		background-color: #ff9900;
+		border: #747474 5px solid;
+		display: none;
+    }
+    #navigation ul{
+      display: block;
+      margin-top: 10px
+    }
+    #navigation ul li{
+      margin-bottom: 20px;
+    }
+    #search{
+
+      margin-left: 0;
+      
+      }
+      #search-suggestions {
+        top: 100%;
+        margin-left: -40px;
+        left: 0;
+        width: 250px;
+        background-color: #333333;
+        border: 1px solid #ff9900;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        padding: 10px;
+        display: none;
+        z-index: 2;
+        overflow: hidden;
+        }
+        .dropdown a{
+        display: block;
+        }
+        .dropdown {
+        display: none;
+        position: absolute;
+        font-family: 'Fjalla One', sans-serif;
+        width: 150px;
+        
+        }
+
+
+    #trailer-container{
+      display: none;
+    }
+    .file-list-container, .server-list{
+      display: block;
+      margin: 0 auto;
+    }
+    .playBox-container{
+      width: 100%;
+      height: 60vh;
+      z-index: 1;
+    }
+    .movieDetails-container{
+      display: inline-block;
+    }
+    .movie-details{
+      display: block;
+      margin: 0 auto;
+      width: 98%;
+      border-radius: 20px;
+    }
+    
+    #moviePoster{
+      width: 250px;
+      margin-left: 75px;
+      margin-bottom: 0;
+     }
+     #movieTitle{
+      margin: 0;
+     }
+    .movieFile-container{
+      display: inline-block;
+    }
+    .server, .movieFile{
+      width: 250px;
+      background-color: #ff9900;
+      margin-left: 70px;
+    }
+    .movieFile-container h1{
+      color: #131313;
+    }
+    }
+
+
+    /*LANDSCAPE MODE*/
+    @media only screen and (max-device-width: 1023px) and (orientation: landscape), (max-width: 1023px) and (orientation: landscape) {
+  
+        body{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .movie-player {
+      width: 100%;
+      background-color: #ccc;
+      z-index: 4;
+      position: relative;
+    }
+    #menu-icon{
+      float: right;
+      font-size: 30px;
+      display:flex;
+      margin: 20px;
+      }
+    .logo-image{
+      width: 50px;
+      margin-left: 5px;
+    }
+    h1#logo{
+      margin-left: 10px;
+      margin-top: -5px;
+    }
+    h1#logo a{
+      font-size: 20px;
+      margin-top: 0;
+    }
+    p#sub-logo{
+      margin-left: -15px;
+    }
+    p#sub-logo a {
+      font-size: 20px;
+      margin-top: -10px;
+      letter-spacing: 9px;
+    }
+    .navigation-container{
+      height: 18vh;
+    }
+     
+    #navigation{
+    	width: 250px;
+		margin-right: 30px;
+		margin-top: -20px;
+		border-radius: 30px;
+		padding: 0;
+		z-index: 3;
+		position: relative;
+		background-color: #ff9900;
+		border: #747474 5px solid;
+		display: none;
+    }
+    #navigation ul{
+      display: block;
+      margin-top: 10px
+    }
+    #navigation ul li{
+      margin-bottom: 20px;
+    }
+    #search{
+
+      margin-left: 0;
+      
+      }
+      #search-suggestions {
+        top: 100%;
+        margin-left: -40px;
+        left: 0;
+        width: 250px;
+        background-color: #333333;
+        border: 1px solid #ff9900;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        padding: 10px;
+        display: none;
+        z-index: 2;
+        overflow: hidden;
+        }
+        .dropdown a{
+        display: block;
+        }
+        .dropdown {
+        display: none;
+        position: absolute;
+        font-family: 'Fjalla One', sans-serif;
+        width: 150px;
+        
+        }
+
+
+    #trailer-container{
+      display: none;
+    }
+    .file-list-container, .server-list{
+      display: block;
+      margin: 0 auto;
+    }
+
+    .playBox-container{
+      width: 100%;
+      height: 80vh;
+    }
+    .movieDetails-container{
+      display: inline-block;
+    }
+    .movie-details{
+      display: block;
+      margin: 0 auto;
+      width: 98%;
+      border-radius: 20px;
+    }
+    #moviePoster{
+      margin-left: 70px;
+     }
+     #movieTitle{
+      margin: 0;
+     }
+    .movieFile-container{
+      display: inline-block;
+    }
+    .server, .movieFile{
+      width: 250px;
+      background-color: #ff9900;
+      margin-left: 20px;
+    }
+    .movieFile-container h1{
+      color: #131313;
+    }
+    }
+
+
+
+
+
+
